@@ -39,6 +39,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s;
+}
+
+.navbar.sticky {
+    height: 8rem;
+    background-color: #fff;
+    box-shadow: 0 1rem 10rem rgba(130, 162, 235, 0.6);
 }
 
 /* Logo */
@@ -74,6 +81,11 @@ header {
     text-align: right;
     transform: translate(2.2rem, -1rem);
 }
+
+.sticky .logo span{
+    color: #092627;
+    text-shadow: none;
+}
 /* End of Logo */
 
 /* Nav Items */
@@ -90,7 +102,7 @@ header {
     position: relative;
 }
 
-.nav-item::after {
+.nav-item:not(:last-child):after {
     content: "";
     position: absolute;
     top: 2.9rem;
@@ -110,12 +122,21 @@ header {
     /* transition: all 0.3s; */
 }
 
+.sticky .nav-item::after {
+    top: 5rem;
+}
+
 .nav-link {
     font-size: 1.3rem;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: .1rem;
     text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.sticky .nav-link {
+    color: #092627;
+    text-shadow: none;
 }
 
 /* Dropdown 1 */
@@ -129,6 +150,11 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
+}
+
+.sticky .dropdown {
+    top: 7rem;
+    box-shadow: 1 1rem 10rem rgba(130, 162, 235, 0.4);
 }
 
 .nav-item:hover .dropdown {
@@ -577,6 +603,12 @@ span:nth-child(1) {
 
 .nav-btn:hover {
     transform: translateY(-0.2rem);
+}
+
+.sticky .nav-btn {
+    background: linear-gradient(to right, #ff45b9, #ff3598);
+    box-shadow: none;
+    color: #fff;
 }
 /* End of Nav Items */
 
